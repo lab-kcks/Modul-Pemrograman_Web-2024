@@ -1,8 +1,4 @@
 # Modul 1 - HTML dan CSS
-Tentu! Berikut adalah penjelasan tentang materi **CSS** dalam bahasa Indonesia beserta contoh penggunaannya:
-
----
-
 ### 🎨 **CSS**
 
 #### **1. Cara Menyisipkan CSS**
