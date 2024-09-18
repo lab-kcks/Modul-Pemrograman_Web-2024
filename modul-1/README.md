@@ -299,7 +299,7 @@ Contoh:
   }
 </style>
 ```
-![contoh box model](foto/box.png)
+![contoh box model](foto/CSS/box.png)
 
 ---
 
@@ -319,7 +319,7 @@ Contoh:
   }
 </style>
 ```
-![contoh penggunaan height and width](foto/tinggilebar.png)
+![contoh penggunaan height and width](foto/CSS/tinggilebar.png)
 ---
 
 #### **5. Warna (Color)**
@@ -337,7 +337,7 @@ Contoh:
   }
 </style>
 ```
-![warna background dan font](foto/warna.png)
+![warna background dan font](foto/CSS/warna.png)
 ---
 
 #### **6. Teks & Font**
@@ -357,7 +357,7 @@ Contoh:
   }
 </style>
 ```
-![contoh font](foto/font.png)
+![contoh font](foto/CSS/font.png)
 
 #### **11. Flex**
 
@@ -497,9 +497,3 @@ Contoh:
 #### **13.Responsive**
 
 Responsive Layout adalah pendekatan desain web yang memastikan tampilan dan fungsionalitas halaman web tetap baik di berbagai ukuran layar, mulai dari desktop besar hingga perangkat mobile kecil. Dengan responsive layout, desain halaman web dapat menyesuaikan diri dengan lebar viewport perangkat yang berbeda.
-
-
-
-
-
-
