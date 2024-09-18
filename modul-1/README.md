@@ -171,16 +171,22 @@ Konsep Utama Flexbox:
 4) Sumbu Silang (Cross Axis): Arah yang tegak lurus terhadap sumbu utama. Ini digunakan untuk mengatur penempatan item flex di sepanjang sumbu yang berbeda dari sumbu utama.
 
 5) Properti Kontainer Flex:
-  - `flex-direction`: Mengatur arah sumbu utama (misalnya, baris horizontal atau kolom vertikal).
-  - `flex-wrap`: Menentukan apakah item flex harus dibungkus ke baris atau kolom berikutnya jika ruang tidak cukup.
-  - `justify-content`: Mengatur distribusi ruang sepanjang sumbu utama (misalnya, penempatan di tengah, spasi antara, atau spasi di sekeliling).
-  - `align-items`: Menentukan bagaimana item flex diatur di sepanjang sumbu silang (misalnya, pusatkan, atau perataan di awal atau akhir).
-  - `align-content`: Mengatur ruang di antara baris flex saat kontainer memiliki banyak baris (misalnya, spasi antara, atau meratakan di pusat).
+    - `flex-direction`: Mengatur arah sumbu utama (misalnya, baris horizontal atau kolom vertikal).
+
+    - `flex-wrap`: Menentukan apakah item flex harus dibungkus ke baris atau kolom berikutnya jika ruang tidak cukup.
+
+    - `justify-content`: Mengatur distribusi ruang sepanjang sumbu utama (misalnya, penempatan di tengah, spasi antara, atau spasi di sekeliling).
+
+    - `align-items`: Menentukan bagaimana item flex diatur di sepanjang sumbu silang (misalnya, pusatkan, atau perataan di awal atau akhir).
+
+    - `align-content`: Mengatur ruang di antara baris flex saat kontainer memiliki banyak baris (misalnya, spasi antara, atau meratakan di pusat).
 
 6) Properti Item Flex:
-  - `flex-grow`: Mengatur seberapa banyak item flex akan tumbuh relatif terhadap item lainnya jika ada ruang ekstra.
-  - `flex-shrink`: Mengatur seberapa banyak item flex akan menyusut relatif terhadap item lainnya jika ruang terbatas.
-  - `flex-basis`: Menentukan ukuran awal item flex sebelum `flex-grow` atau `flex-shrink` diterapkan.
+    - `flex-grow`: Mengatur seberapa banyak item flex akan tumbuh relatif terhadap item lainnya jika ada ruang ekstra.
+
+    - `flex-shrink`: Mengatur seberapa banyak item flex akan menyusut relatif terhadap item lainnya jika ruang terbatas.
+
+    - `flex-basis`: Menentukan ukuran awal item flex sebelum `flex-grow` atau `flex-shrink` diterapkan.
 
 
 
@@ -191,7 +197,9 @@ Contoh:
   <div class="item">Item 2</div>
   <div class="item">Item 3</div>
 </div>
+```
 
+```css
 <style>
     .container {
       display: flex;
@@ -224,20 +232,20 @@ Konsep Utama Grid Layout:
 3) Baris dan Kolom (Grid Rows and Columns): Grid Layout membagi kontainer menjadi baris dan kolom. Dapat mengatur ukuran baris dan kolom serta mengatur penempatan item di dalam grid.
 
 4) Properti Kontainer Grid:
-  - `grid-template-rows`: Menentukan ukuran baris grid. Menggunakan satuan seperti px, %, atau fr (fractional unit).
+    - `grid-template-rows`: Menentukan ukuran baris grid. Menggunakan satuan seperti px, %, atau fr (fractional unit).
 
-  - `grid-template-columns`: Menentukan ukuran kolom grid
+    - `grid-template-columns`: Menentukan ukuran kolom grid
 
-  - `grid-template-areas`: Mengatur area grid dengan mendefinisikan nama area untuk memudahkan penempatan item grid
+    - `grid-template-areas`: Mengatur area grid dengan mendefinisikan nama area untuk memudahkan penempatan item grid
 
-  - `grid-gap`: Menentukan jarak antara baris dan kolom grid
+    - `grid-gap`: Menentukan jarak antara baris dan kolom grid
 
 5) Properti Item Grid:
-  - `grid-column`: Menentukan berapa banyak kolom item grid akan mencakup
+    - `grid-column`: Menentukan berapa banyak kolom item grid akan mencakup
 
-  - `grid-row`: Menentukan berapa banyak baris item grid akan mencakup.
+    - `grid-row`: Menentukan berapa banyak baris item grid akan mencakup.
 
-  - `grid-area`: Mengatur posisi item grid berdasarkan nama area atau posisi grid.
+    - `grid-area`: Mengatur posisi item grid berdasarkan nama area atau posisi grid.
 
 Contoh:
 
@@ -248,7 +256,9 @@ Contoh:
     <div class="main">Main Content</div>
     <div class="footer">Footer</div>
   </div>
+```
 
+```css
   <style>
     .grid-container {
       display: grid;
@@ -280,6 +290,11 @@ Contoh:
     }
   </style>
 ```
+
+#### **13.Responsive**
+
+Responsive Layout adalah pendekatan desain web yang memastikan tampilan dan fungsionalitas halaman web tetap baik di berbagai ukuran layar, mulai dari desktop besar hingga perangkat mobile kecil. Dengan responsive layout, desain halaman web dapat menyesuaikan diri dengan lebar viewport perangkat yang berbeda.
+
 
 
 
