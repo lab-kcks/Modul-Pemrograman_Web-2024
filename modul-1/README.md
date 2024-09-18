@@ -221,7 +221,7 @@ Contoh:
 
 #### **12. Grid**
 
-CSS Grid Layout adalah sistem tata letak dua dimensi yang memungkinkan Anda untuk membuat desain yang kompleks dan responsif dengan mudah. Grid Layout membagi area halaman menjadi baris dan kolom, sehingga Anda bisa menempatkan elemen di dalam grid dengan cara yang lebih fleksibel dibandingkan metode lain.
+CSS Grid Layout adalah sistem tata letak dua dimensi yang memungkinkan untuk membuat desain yang kompleks dan responsif dengan mudah. Grid Layout membagi area halaman menjadi baris dan kolom, sehingga bisa menempatkan elemen di dalam grid dengan cara yang lebih fleksibel dibandingkan metode lain.
 
 Konsep Utama Grid Layout:
 
@@ -291,9 +291,121 @@ Contoh:
   </style>
 ```
 
-#### **13.Responsive**
+#### **13. Responsive**
 
 Responsive Layout adalah pendekatan desain web yang memastikan tampilan dan fungsionalitas halaman web tetap baik di berbagai ukuran layar, mulai dari desktop besar hingga perangkat mobile kecil. Dengan responsive layout, desain halaman web dapat menyesuaikan diri dengan lebar viewport perangkat yang berbeda.
+
+Konsep utama responsive layout:
+
+  1) **Media Queries**: Media queries adalah fitur CSS untuk menerapkan gaya khusus berdasarkan ukuran layar perangkat. Media queries digunakan untuk menentukan aturan CSS yang hanya diterapkan jika kondisi tertentu terpenuhi.
+
+  Contoh penggunaan media queries:
+  ```css
+  /* Style default */
+  body {
+  font-size: 16px;
+  }
+
+  /* Style dengan lebar max 600px */
+  @media (max-width: 600px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  ```
+
+  2) **Unit Responsif**: Menggunakan unit ukuran responsif seperti em, rem, %, dan vh/vw (viewport height/width) memungkinkan elemen untuk menyesuaikan ukuran dan posisi mereka sesuai dengan ukuran viewport
+
+  Contoh penggunaan unit responsif:
+  ```css
+  .container {
+  width: 80%;
+  padding: 2rem;
+  }
+  ```
+
+  3) **Responsive Grid & Flexbox** :  Menggunakan Grid Layout dan Flexbox dapat mempermudah penciptaan tata letak responsif dengan fleksibilitas tinggi. Dengan metode ini, arah baris/kolom dapat diubah, elemen dapat disembunyikan atau ditampilkan, dan ukuran item grid/flex dapat disesuaikan berdasarkan ukuran layar.
+
+  Contoh responsive flexbox:
+  ```css
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+  .item {
+  flex: 1 1 200px; /* Item akan tumbuh dan menyusut dengan ukuran minimum 200px */
+  }
+
+  ```
+
+  Contoh responsive gridbox: 
+  ```css
+  .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Style untuk device dengan lebar layar max 768px */
+  @media (max-width: 768px) {
+    .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Style untuk device dengan lebar layar max 480px */
+  @media (max-width: 480px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  ```
+
+  5) **Responsive Image**: Menggunakan gambar responsif yang dapat menyesuaikan ukuran dan resolusi mereka sesuai dengan perangkat yang digunakan. Dapat menggunakan atribut `srcset` dan `sizes` pada elemen `<img>`
+
+  Contoh penggunaan `srcset` dan `sizes`:
+  ```css
+  <img src="image-600.jpg" 
+     srcset="image-400.jpg 400w, image-600.jpg 600w, image-800.jpg 800w"
+     sizes="(max-width: 600px) 100vw, 50vw" 
+     alt="Contoh gambar responsif">
+  ```
+
+Contoh responsive layout:
+```html
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+```
+```css
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .item {
+      background-color: lightcoral;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+```
+
 
 
 
