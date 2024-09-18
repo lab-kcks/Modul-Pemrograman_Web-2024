@@ -26,16 +26,26 @@ Ada tiga cara untuk menyisipkan CSS ke dalam dokumen HTML:
 - **Eksternal CSS**: CSS disimpan dalam file terpisah dan dihubungkan ke HTML menggunakan tag `<link>`.
   
   ```html
+  <!DOCTYPE html>
+  <html>
   <head>
-    <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="mystyle.css">
   </head>
+  <body>
+
+  <h1>Pemweb seru gasi</h1>
+  <p>seru banget kak</p>
+
+  </body>
+  </html>
+
   ```
 
 ---
 
 #### **2. Selektor (Menghubungkan Class & Id)**
 
-Selektor CSS digunakan untuk menargetkan elemen HTML tertentu agar diberi gaya. Dua selektor utama adalah **class** dan **id**.
+Selektor CSS digunakan untuk menargetkan elemen HTML tertentu buat dikasih *style*. Dua selektor utama adalah **class** dan **id**.
 
 - **Class Selector**: Menargetkan elemen dengan kelas tertentu.
   
@@ -53,10 +63,10 @@ Selektor CSS digunakan untuk menargetkan elemen HTML tertentu agar diberi gaya. 
 - **ID Selector**: Menargetkan elemen unik dengan ID tertentu.
   
   ```html
-  <div id="kotak-utama">Kotak Utama</div>
+  <div id="kotakID">Kotak Utama</div>
   
   /* CSS */
-  #kotak-utama {
+  #kotakID {
     background-color: green;
     padding: 20px;
   }
@@ -75,7 +85,7 @@ Selektor CSS digunakan untuk menargetkan elemen HTML tertentu agar diberi gaya. 
 
 Contoh:
 ```html
-<div class="kotak">Isi Kotak</div>
+<div class="kotak">Pemweb</div>
 
 <style>
   .kotak {
@@ -86,16 +96,17 @@ Contoh:
   }
 </style>
 ```
+![contoh box model](foto/box.png)
 
 ---
 
 #### **4. Tinggi & Lebar (Height & Width)**
 
-Anda bisa menetapkan tinggi dan lebar elemen menggunakan properti `height` dan `width`.
+Kalian bisa menetapkan tinggi dan lebar elemen menggunakan properti `height` dan `width`.
 
 Contoh:
 ```html
-<div class="kotak">Kotak ini memiliki lebar dan tinggi tetap.</div>
+<div class="kotak">kotak ini ada tinggi sama lebar</div>
 
 <style>
   .kotak {
@@ -105,7 +116,7 @@ Contoh:
   }
 </style>
 ```
-
+![contoh penggunaan height and width](foto/tinggilebar.png)
 ---
 
 #### **5. Warna (Color)**
@@ -114,7 +125,7 @@ Properti `color` mengubah warna teks, sedangkan `background-color` mengubah warn
 
 Contoh:
 ```html
-<p class="teks-berwarna">Ini adalah teks berwarna.</p>
+<p class="teks-berwarna">woh berwarna cik</p>
 
 <style>
   .teks-berwarna {
@@ -123,16 +134,16 @@ Contoh:
   }
 </style>
 ```
-
+![warna background dan font](foto/warna.png)
 ---
 
 #### **6. Teks & Font**
 
-Anda bisa menata teks menggunakan properti seperti `font-size`, `font-family`, `text-align`, `line-height`, dan lainnya.
+kalian bisa menata teks menggunakan properti seperti `font-size`, `font-family`, `text-align`, `line-height`, dan lainnya.
 
 Contoh:
 ```html
-<p class="teks-styling">Ini adalah teks yang ditata.</p>
+<p class="text">Pemweb seru ya ges ya</p>
 
 <style>
   .teks-styling {
@@ -143,3 +154,4 @@ Contoh:
   }
 </style>
 ```
+![contoh font](foto/font.png)
