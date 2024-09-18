@@ -1,13 +1,5 @@
 # Modul 1 - HTML dan CSS
-Tentu! Berikut adalah penjelasan tentang materi **CSS** dalam bahasa Indonesia beserta contoh penggunaannya:
-
----
-
 ### 🎨 **CSS**
-
-CSS digunakan untuk menata dan mengatur tampilan halaman web. Dengan menggunakan CSS, kita dapat memisahkan struktur HTML dari presentasi, sehingga kode lebih bersih dan mudah dikelola.
-
----
 
 #### **1. Cara Menyisipkan CSS**
 
