@@ -331,6 +331,7 @@ Contoh:
 </style>
 ```
 ![contoh penggunaan height and width](foto/CSS/tinggilebar.png)
+
 ---
 
 #### **5. Warna (Color)**
@@ -349,6 +350,7 @@ Contoh:
 </style>
 ```
 ![warna background dan font](foto/CSS/warna.png)
+
 ---
 
 #### **6. Teks & Font**
@@ -369,6 +371,305 @@ Contoh:
 </style>
 ```
 ![contoh font](foto/CSS/font.png)
+
+---
+
+#### **7. Pseudo-Class**
+
+Pseudo-class merupakan keyword yang ditambahkan pada selector untuk mengubah style elemen dalam kondisi tertentu `tanpa menambahkan` class atau id.
+
+Pseudo-class sering digunakan untuk menargetkan elemen berdasarkan `status dinamisnya`, misal saat di-hover, diklik, atau saat merupakan elemen pertama dalam `list`
+
+- `Contoh pseudo-class`
+
+```css
+button {
+    background-color: blue;
+    color: black;
+}
+
+/* Pseudo-class akan aktif saat button di-hover */
+button:hover {
+    background-color: red;
+    color: white;
+}
+```
+
+![contoh pseudo class](./foto/CSS/pseudoclass.gif)
+
+##### **Beberapa Contoh Pseudo-Class**
+
+terdapat banyak Pseudo-class dalam CSS yang dapat digunakan, namun di sini kita hanya akan membahas beberapa jenis pseudo-class yang sering digunakan dalam pengembangan website beserta contohnya.
+
+Untuk melihat daftar lengkapnya, silahkan gunakan [link berikut](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes#element_display_state_pseudo-classes)
+
+- `:hover`
+
+  Aktif ketika user mengarahkan pointernya kepada elemen yang dirujuk. Apabila user menggunakan layar sentuh, maka hover akan aktif ketika user menekan elemen.
+
+- `:focus`
+
+  Aktif ketika user berfokus pada elemen yang dirujuk. Misalnya pada elemen input, maka `:focus` akan aktif ketika user menekan elemen input
+
+- `:link`
+
+  Aktif ketika user belum mengunjungi link yang diarahkan dari sebuah elemen `anchor` (`a`).
+
+- `:visited`
+
+  Aktif ketika user telah mengunjungi link yang diarahkan dari sebuah elemen `a`.
+
+- `:active`
+
+  Aktif ketika elemen yang dirujuk dalam kondisi aktif. Misal elemen `button` atau `a` yang diklik oleh user.
+
+---
+
+#### **8. Position**
+
+Position merupakan properti yang menentukan `bagaimana` sebuah elemen diposisikan dalam dokumen, dan `bagaimana` letaknya terhadap elemen lainnya.
+
+perlu dicatat bahwa position di sini menentukan bagaimana posisi dari sebuah elemen, bukan di mana posisi dari sebuah elemen.
+
+Position memiliki 5 nilai, yaitu
+
+1. `static`
+
+    Kondisi default dari semua elemen html, tidak akan terpengaruh oleh `top`, `bottom`, `left`, dan `right`.
+
+2. `relative`
+
+    Elemen akan diposisikan secara `relatif` terhadap `posisi asalnya`. (Sama seperti static, namun dipengaruhi oleh `top`, `bottom`, `left`, dan `right`).
+
+3. `absolute`
+
+    Elemen akan diposisikan `relatif` terhadap `elemen induk` terdekat yang memiliki position `selain static`.
+
+4. `fixed`
+
+    Elemen diposisikan berdasarkan viewport halaman. Elemen akan tetap berada pada posisi yang sama meskipun halaman di-scroll
+
+5. `sticky`
+
+    Elemen akan diposisikan secara normal, namun berubah menjadi `fixed` ketika elemen mencapai ujung halaman saat di-scroll.
+
+sementara properti yang menentukan posisi elemen (dalam konteks pengukuran) adalah `top`, `bottom`, `left`, dan `right`.
+
+berikut adalah contoh dari setiap value Position:
+
+![position contoh](./foto/CSS/position.gif)
+
+Sumber: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/position)
+
+---
+
+#### **9. Z-index**
+
+Z-index adalah properti yang digunakan untuk mengatur urutan elemen pada axis Z (depth) atau layer dalam konteks 2D.
+
+Z-index dapat diatur nilainya dengan syarat berupa bilangan bulat (negatif dan nol termasuk) atau `auto` (default).
+
+##### **Bagaimana Z-Index Bekerja?**
+
+1. `Z-index` hanya berlaku pada position selain `static`.
+
+2. Elemen yang memiliki nilai Z-index lebih besar akan ditampilkan di atas `Z-index` yang lebih kecil.
+
+3. Apabila `Z-index` bernilai `auto`, maka urutan akan mengikuti urutan penulisan elemen dalam html.
+
+##### **Perbandingan nilai Z-Index**
+
+Kalian dapat mengamati contoh di bawah ini untuk memahami perbedaan nilai Z-index terhadap suatu elemen.
+
+- `HTML`
+
+```html
+
+<!-- Semua Image dalam posisi relative -->
+
+<h1>Statis</h1>
+
+<img src="./senate.webp" />
+<img src="./Notyet.webp" />
+
+<br/>
+
+<h1>Auto</h1>
+<img class="image-1-auto" src="./senate.webp" />
+<img class="image-2-auto" src="./Notyet.webp" />
+
+<br/>
+
+<h1>9-3</h1>
+<img class="image-1-9" src="./senate.webp" />
+<img class="image-2-3" src="./Notyet.webp" />
+
+<br/>
+
+<h1>3-9</h1>
+<img class="image-1-3" src="./senate.webp" />
+<img class="image-2-9" src="./Notyet.webp" />
+
+```
+
+- `CSS`
+
+```css
+img {
+    position: relative;
+}
+
+.image-1-auto {
+    z-index: auto;
+    left: 100px;
+}
+
+.image-2-auto {
+    z-index: auto;
+}
+
+.image-1-9 {
+    z-index: 9;
+    left: 100px;
+}
+
+.image-2-3 {
+    z-index: 3;
+}
+
+.image-1-3 {
+    z-index: 3;
+    left: 100px;
+}
+
+.image-2-9 {
+    z-index: 9;
+}
+```
+
+- `Hasil`
+
+`Statis`
+
+![z-statis](./foto/CSS/z-statis.png)
+
+`Auto && Auto`
+
+![z-statis](./foto/CSS/z-auto.png)
+
+`9 && 3`
+
+![z-statis](./foto/CSS/z-93.png)
+
+`3 && 9`
+
+![z-statis](./foto/CSS/z-39.png)
+
+Untuk dokumentasi lebih lanjut mengenai Z-Index, dapat diakses melalui [link berikut](https://developer.mozilla.org/en-US/docs/Web/CSS/z-index)
+
+---
+
+#### **10. Display**
+
+Display adalah properti yang menentukan bagaimana elemen ditampilkan atau diatur dalam layout halaman website.
+
+![display gif](./foto/CSS/display.gif)
+
+##### **Nilai - Nilai umum Display**
+
+- `block`
+
+    Elemen ditampilkan sebagai block-level element yang berarti elemen akan **mengambil seluruh lebar** yang tersedia (100% dari lebar parent-nya), dan selalu **dimulai dari baris baru**.
+
+- `inline`
+
+    Elemen ditampilkan sebagai inline-level element, yang berarti elemen hanya mengambil **lebar sesuai dengan kontennya**, tidak memulai baris baru, dan bisa berada di satu baris dengan elemen lain.
+
+- `inline-block`
+
+    Kombinasi antara elemen block dan inline. Elemen dapat berada di **satu baris** dengan elemen lain (seperti inline), namun juga dapat memiliki **properti lebar dan tinggi** (seperti block).
+
+- `none`
+
+    Elemen tidak akan ditampilkan dalam dokumen. Elemen tidak hanya tersembunyi secara visual, tetapi juga tidak mengambil ruang dalam layout halaman
+
+- `flex`
+
+    Elemen diatur sebagai **flex container**. Flexbox menyediakan cara yang **fleksibel** untuk menyusun elemen-elemen anak (children) dalam satu arah (baris atau kolom).
+
+    Lebih lanjut tentang flexbox akan dijelaskan pada CSS No. 11
+
+- `grid`
+
+    Elemen diatur sebagai **grid container**. Grid layout memungkinkan kita untuk membuat **tata letak yang lebih kompleks** dengan baris dan kolom.
+
+##### **Contoh Display**
+
+- `HTML`
+
+```html
+
+<h2>Block Element</h2>
+    <div class="block">I Conquer the World.</div>
+
+    <h2>Inline Element</h2>
+    <span class="inline">Ini inline</span>
+    <span class="inline">Ini teman inline</span>
+    <span class="inline">panjang span akan mengikuti ukuran dari teks di dalamnya sehingga semakin panjang teks yang tertulis, maka semakin panjang pula elemen span ini . Baca Selengkapnya...</span>
+
+    <h2>Inline-block Element</h2>
+    <div class="inline-block"><p>Ini Budi</p></div>
+    <div class="inline-block"><p>Ini Bapak Budi</p></div>
+
+    <br/>
+
+    <div class="inline-block"><p>karena panjang div ini sudah diatur, maka teks yang terlalu panjang akan melebihi batas div dan tampilannya akan tampak keluar dari kotak...</p></div>
+
+    <h2>None Element</h2>
+    <div class="hidden">teks ini telah disembunyikan dan tidak ada yang dapat melihatnya kecuali mereka yang membuka mata ketiga</div>
+
+```
+
+- `CSS`
+
+```css
+.block {
+    display: block;
+    background-color: lightcoral;
+    width: 100%;
+    padding: 10px;
+}
+
+.inline {
+    display: inline;
+    background-color: lightgreen;
+    padding: 10px;
+
+    /* ukuran tidak akan berubah pada display: inline */
+    width: 100px;
+    height: 100px;
+}
+
+.inline-block {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 5px;
+}
+
+.hidden {
+    display: none;
+}
+```
+
+- `Hasil`
+
+![hasil display](./foto/CSS/contoh-display.png)
+
+Lebih lanjut tentang display dapat dipelajari melalui [link berikut](https://developer.mozilla.org/en-US/docs/Web/CSS/display).
+
+---
 
 #### **11. Flex**
 
@@ -434,6 +735,8 @@ Contoh:
 ```
 
 ![contohflex](foto/CSS/flex.png)
+
+---
 
 #### **12. Grid**
 
@@ -508,6 +811,8 @@ Contoh:
 ```
 
 ![contoh grid](foto/CSS/grid.png)
+
+---
 
 #### **13. Responsive**
 
