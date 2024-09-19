@@ -202,6 +202,11 @@ Span `<span>` adalah sebuah element **inline** yang umumnya digunakan untuk **me
 | **Jumlah**     | Satu elemen bisa memiliki lebih dari satu kelas.                                                                     | Setiap elemen hanya bisa memiliki satu id unik.                 |
 | **JavaScript** | Dapat digunakan untuk menargetkan beberapa elemen sekaligus.                                                         | Biasanya digunakan untuk menargetkan satu elemen saja.          |
 
+#### Resource Docs Element & Tag HTML
+
+- [w3school HTML Tutorial](https://www.w3schools.com/html/default.asp)
+- [w3school HTML Tags](https://www.w3schools.com/tags/)
+
 ### 🎨 **CSS**
 
 #### **1. Cara Menyisipkan CSS**
@@ -309,7 +314,13 @@ Kalian bisa menetapkan tinggi dan lebar elemen menggunakan properti `height` dan
 
 Contoh:
 ```html
-<div class="kotak">kotak ini ada tinggi sama lebar</div>
+<div class="kotak">
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <p >Lebar = 300px</p>
+  </div>
+  
+  <p style="margin-left: 1rem;">Panjang = 150px</p>
+</div>
 
 <style>
   .kotak {
