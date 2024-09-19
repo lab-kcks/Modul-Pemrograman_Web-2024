@@ -534,7 +534,7 @@ Konsep utama responsive layout:
 
   2) **Unit Responsif**: Menggunakan unit ukuran responsif seperti em, rem, %, dan vh/vw (viewport height/width) memungkinkan elemen untuk menyesuaikan ukuran dan posisi mereka sesuai dengan ukuran viewport
 
-  ![responsive unit](foto/CSS/res-unit.png)
+      ![responsive unit](foto/CSS/res-unit.png)
 
       Contoh penggunaan unit responsif:
       ```css
