@@ -187,7 +187,7 @@ Span `<span>` adalah sebuah element **inline** yang umumnya digunakan untuk **me
 
 #### 11. Id 
 
-`id` adalah atribut yang digunakan untuk memberikan **identitas unik** pada elemen HTML. Setiap elemen di halaman harus memiliki `id` yang unik, artinya tidak boleh ada `id` yang sama untuk beberapa elemen yang berbeda. Atribut `id` biasanya digunakan ketika Anda ingin menargetkan satu elemen tertentu untuk diberikan gaya atau manipulasi JavaScript.
+`id` adalah atribut yang digunakan untuk memberikan **identitas unik** pada elemen HTML. Setiap elemen di halaman harus memiliki `id` yang unik, artinya tidak boleh ada `id` yang sama untuk beberapa elemen yang berbeda. Atribut `id` biasanya digunakan ketika ingin menargetkan satu elemen tertentu untuk diberikan gaya atau manipulasi JavaScript.
 ```html
 <div id="header">Ini adalah header</div> 
 <p id="intro">Ini adalah paragraf pertama yang memiliki id 'intro'.</p>
@@ -426,7 +426,7 @@ Contoh:
 
 #### **12. Grid**
 
-CSS Grid Layout adalah sistem tata letak dua dimensi yang memungkinkan Anda untuk membuat desain yang kompleks dan responsif dengan mudah. Grid Layout membagi area halaman menjadi baris dan kolom, sehingga Anda bisa menempatkan elemen di dalam grid dengan cara yang lebih fleksibel dibandingkan metode lain.
+CSS Grid Layout adalah sistem tata letak dua dimensi yang memungkinkan untuk membuat desain yang kompleks dan responsif dengan mudah. Grid Layout membagi area halaman menjadi baris dan kolom, sehingga bisa menempatkan elemen di dalam grid dengan cara yang lebih fleksibel dibandingkan metode lain.
 
 Konsep Utama Grid Layout:
 
@@ -574,10 +574,11 @@ Konsep utama responsive layout:
 
       Contoh penggunaan `srcset` dan `sizes`:
       ```css
-      <img src="image-600.jpg" 
-        srcset="image-400.jpg 400w, image-600.jpg 600w, image-800.jpg 800w"
-        sizes="(max-width: 600px) 100vw, 50vw" 
-        alt="Contoh gambar responsif">
+      <img 
+        src="image-1200.jpg" 
+        srcset="image-400.jpg 400w, image-800.jpg 800w, image-1200.jpg 1200w"
+        sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 1200px"
+        alt="Contoh Gambar Responsif">
       ```
 
 Contoh responsive layout:
