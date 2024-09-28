@@ -117,7 +117,7 @@ Dalam modul ini, klean akan mempelajari dasar-dasar JavaScript.
 
 ## 2. Intermediate JavaScript
 
-Setelah memahami dasar-dasar, kita akan melanjutkan ke konsep yang lebih kompleks.
+Setelah memahami dasar-dasar, klean akan melanjutkan ke konsep yang lebih kompleks.
 
 ### 2.1. Arrays
 
@@ -190,7 +190,7 @@ Setelah memahami dasar-dasar, kita akan melanjutkan ke konsep yang lebih komplek
 
 ## 3. Advanced JavaScript
 
-Di bagian ini, kita akan mempelajari fitur dan konsep lanjutan dalam JavaScript.
+Di bagian ini, klean akan mempelajari fitur dan konsep lanjutan dalam JavaScript.
 
 ### 3.1. Asynchronous JavaScript
 
