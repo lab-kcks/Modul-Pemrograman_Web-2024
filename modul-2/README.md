@@ -259,56 +259,134 @@ Setelah memahami dasar-dasar, klean akan melanjutkan ke konsep yang lebih komple
 
 ### 2.3. DOM Manipulation
 
-- **Mengakses Elemen DOM**:
+#### 2.3.1. DOM Document
 
-  ```javascript
-  const title = document.getElementById("title");
-  const paragraphs = document.querySelectorAll("p");
-  ```
+`document` adalah objek utama yang mewakili seluruh halaman web. Klean bisa mengakses elemen, membuat elemen baru, dan melakukan manipulasi DOM lainnya menggunakan `document`.
 
-- **Mengubah Konten dan Gaya**:
-
-  ```javascript
-  title.textContent = "New Title";
-  title.style.color = "blue";
-  ```
-
-- **Menambahkan Event Listener**:
-
-  ```javascript
-  const button = document.querySelector("button");
-  button.addEventListener("click", () => {
-    alert("Button clicked!");
-  });
-  ```
-
-### 2.4. Manipulasi DOM Lanjutan
-
-#### 2.4.1. Membuat Elemen dengan `createElement`
-
-klean bisa membuat elemen HTML secara dinamis menggunakan metode `document.createElement()`. Setelah elemen dibuat, klean dapat menambahkannya ke dalam DOM menggunakan `appendChild()` atau `append()`.
-
-Contoh membuat elemen dan menambahkannya ke halaman:
+Contoh mengakses elemen:
 
 ```javascript
-const newParagraph = document.createElement("p");
-
-newParagraph.textContent =
-  "Ini paragraf baru yang dibuat dengan createElement.";
-
-document.body.appendChild(newParagraph);
+const title = document.getElementById("title");
+const paragraphs = document.querySelectorAll("p");
 ```
 
-#### 2.4.2. Menggunakan `innerHTML` untuk Mengubah Konten
+#### 2.3.2. DOM Elements
 
-`innerHTML` memungkinkan klean untuk mengubah atau menyisipkan HTML ke dalam elemen (awas **XSS** puhh ).
+Elemen DOM bisa diakses dan dimanipulasi untuk mengubah konten, gaya, atribut, dll.
 
-Contoh menggunakan `innerHTML`:
+Contoh mengubah konten dan gaya:
+
+```javascript
+title.textContent = "New Title";
+title.style.color = "blue";
+```
+
+#### 2.3.3. DOM HTML
+
+`innerHTML` digunakan untuk mengubah atau menyisipkan konten HTML dalam elemen. (Awas kena **XSS** puhh)
+
+Contoh:
 
 ```javascript
 const content = document.getElementById("content");
 content.innerHTML =
-  "<h1>Judul Baru</h1><p>Paragraf ini diubah dengan innerHTML.</p>";
+  "<h1>Judul Baru</h1><p>Paragraf diubah dengan innerHTML.</p>";
+```
+
+#### 2.3.4. DOM Forms
+
+Untuk mengakses dan memanipulasi elemen form seperti `input`, `textarea`, dll., klean bisa menggunakan properti `value`.
+
+Contoh menangani form:
+
+```javascript
+const form = document.getElementById("myForm");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const inputValue = document.getElementById("inputField").value;
+  alert(`Input value: ${inputValue}`);
+});
+```
+
+#### 2.3.5. DOM CSS
+
+Untuk mengubah gaya elemen, klean bisa menggunakan properti `style`.
+
+Contoh:
+
+```javascript
+title.style.fontSize = "24px";
+title.style.backgroundColor = "yellow";
+```
+
+#### 2.3.6. DOM Animations
+
+Klean bisa menambahkan animasi menggunakan CSS atau JavaScript. Dengan JavaScript, properti `style` bisa digunakan untuk mengubah transformasi dan transisi.
+
+Contoh:
+
+```javascript
+const box = document.getElementById("box");
+box.style.transition = "transform 0.5s";
+box.style.transform = "rotate(45deg)";
+```
+
+#### 2.3.7. DOM Events
+
+Event adalah tindakan yang dilakukan oleh pengguna atau browser seperti klik, scroll, dan input. Klean bisa menggunakan event seperti `click`, `input`, atau `submit`.
+
+Contoh event `click` yang digunakan di HTML nantinya:
+
+```javascript
+function changeText(id) {
+  id.innerHTML = "Huft!";
+}
+```
+
+#### 2.3.8. DOM Event Listener
+
+`addEventListener` digunakan untuk menambahkan event listener ke elemen DOM.
+
+Contoh menangani klik tombol:
+
+```javascript
+button.addEventListener("click", () => {
+  console.log("Button was clicked!");
+});
+```
+
+#### 2.3.9. DOM Nodes
+
+Semua elemen di DOM adalah node, dan klean bisa memanipulasinya dengan metode seperti `appendChild`, `removeChild`, atau `replaceChild`.
+
+Contoh menghapus elemen:
+
+```javascript
+const parentElement = document.getElementById("parent");
+const childElement = document.getElementById("child");
+parentElement.removeChild(childElement);
+```
+
+#### 2.3.10. DOM Collections & Node List
+
+**HTMLCollection** dan **NodeList** adalah koleksi elemen DOM. Klean bisa melakukan iterasi di atas koleksi tersebut seperti pada array, meskipun tidak sepenuhnya sama.
+
+Contoh dengan `NodeList`:
+
+```javascript
+const paragraphs = document.querySelectorAll("p");
+paragraphs.forEach((p) => {
+  p.style.color = "green";
+});
+```
+
+Contoh dengan `HTMLCollection`:
+
+```javascript
+const divs = document.getElementsByTagName("div");
+for (let i = 0; i < divs.length; i++) {
+  divs[i].style.backgroundColor = "yellow";
+}
 ```
 
 ## 3. Advanced JavaScript
