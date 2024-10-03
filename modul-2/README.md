@@ -2,7 +2,7 @@
 
 ## 1. JavaScript Basics
 
-JavaScript adalah bahasa pemrograman yang digunakan untuk menambahkan interaktivitas dan logika ke halaman web.
+JavaScript adalah bahasa pemrograman yang digunakan untuk menambahkan interaksi dan logika ke halaman web.
 Dalam modul ini, klean akan mempelajari dasar-dasar JavaScript.
 
 ### 1.1. Menambahkan JavaScript ke HTML
@@ -26,12 +26,12 @@ Dalam modul ini, klean akan mempelajari dasar-dasar JavaScript.
 3. **External JavaScript**: Menghubungkan file eksternal.
 
    ```html
-   <script src="script.js"></script>
+   <script src="./script.js"></script>
    ```
 
 ### 1.2. Sintaks Dasar
 
-- **Variabel**: Menggunakan `var`, `let`, dan `const`.
+- **Variabel**: Menggunakan `let`, dan `const`. (kenapa nggada `var` mas?, karena rekom masa sekarang better `let` dan `const` yeah)
 
   ```javascript
   let name = "Alice"; // variabel yang dapat diubah
@@ -115,6 +115,56 @@ Dalam modul ini, klean akan mempelajari dasar-dasar JavaScript.
   }
   ```
 
+### 1.6. Menggunakan Local Storage
+
+**Local Storage** adalah penyimpanan di browser yang memungkinkan klean menyimpan data secara permanen di sisi klien (hingga dihapus secara manual oleh pengguna).
+
+#### 1.6.1. Menyimpan Data ke Local Storage
+
+Untuk menyimpan data ke local storage, gunakan metode `localStorage.setItem()`. Metode ini menerima dua parameter: kunci (key) dan nilai (value).
+
+Contoh menyimpan data:
+
+```javascript
+localStorage.setItem("username", "Alice");
+
+const user = {
+  name: "Alice",
+  age: 25,
+};
+localStorage.setItem("user", JSON.stringify(user));
+```
+
+#### 1.6.2. Mengambil Data dari Local Storage
+
+Untuk mengambil data yang telah disimpan di local storage, gunakan metode `localStorage.getItem()`. Jika datanya adalah string yang di-encode sebagai JSON, gunakan `JSON.parse()` untuk mengubahnya kembali ke objek JavaScript.
+
+Contoh mengambil data:
+
+```javascript
+const username = localStorage.getItem("username");
+console.log(username); // Output: Alice
+
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user.name); // Output: Alice
+```
+
+#### 1.6.3. Menghapus Data dari Local Storage
+
+Gunakan `localStorage.removeItem()` untuk menghapus item tertentu dari local storage.
+
+Contoh menghapus data:
+
+```javascript
+localStorage.removeItem("username");
+```
+
+Untuk menghapus semua data yang tersimpan di local storage, gunakan `localStorage.clear()`:
+
+```javascript
+localStorage.clear();
+```
+
 ## 2. Intermediate JavaScript
 
 Setelah memahami dasar-dasar, klean akan melanjutkan ke konsep yang lebih kompleks.
@@ -124,14 +174,48 @@ Setelah memahami dasar-dasar, klean akan melanjutkan ke konsep yang lebih komple
 - **Mendefinisikan Array**:
 
   ```javascript
-  let fruits = ["apple", "banana", "orange"];
+  let fruits = [🍏, 🍉, 🍊];
   ```
 
 - **Manipulasi Array**:
 
   ```javascript
-  fruits.push("grape"); // Menambah elemen
+  fruits.push(🍇); // Menambah elemen
   fruits.pop(); // Menghapus elemen terakhir
+  ```
+
+- **Menambah dan Menghapus Elemen di Awal Array**:
+
+  ```javascript
+  fruits.unshift(🍊); // Menambah elemen di awal array
+  fruits.shift(); // Menghapus elemen pertama
+  ```
+
+- **Menggabungkan Dua Array**:
+
+  ```javascript
+  const moreFruits = [🍏, 🍉,];
+  const allFruits = fruits.concat(moreFruits);
+  ```
+
+- **Mengakses Elemen dengan `indexOf` dan `includes`**:
+
+  ```javascript
+  const index = fruits.indexOf(🍏); // Mengembalikan index dari '🍏'
+  const hasApple = fruits.includes(🍏); // Mengecek apakah array memiliki '🍏'
+  ```
+
+- **Menggunakan `slice` untuk Mengambil Subset**:
+
+  ```javascript
+  const someFruits = fruits.slice(1, 3); // Mengambil elemen dari index 1 hingga sebelum 3
+  ```
+
+- **Menggunakan `splice` untuk Menambah/Menghapus Elemen di Posisi Tertentu**:
+
+  ```javascript
+  fruits.splice(2, 0, 🍏); // Menambah 🍏 di index 2 tanpa menghapus elemen
+  fruits.splice(1, 1); // Menghapus 1 elemen mulai dari index 1
   ```
 
 - **Looping Melalui Array**:
@@ -154,6 +238,13 @@ Setelah memahami dasar-dasar, klean akan melanjutkan ke konsep yang lebih komple
       return `Hello, ${this.name}`;
     },
   };
+  let work = {
+    name: "Lorem Ipsum",
+    position: "Software Engineer",
+    greet: () => {
+      return `Hello, ${work.name}`;
+    },
+  };
   ```
 
 - **Akses Properti**:
@@ -161,6 +252,9 @@ Setelah memahami dasar-dasar, klean akan melanjutkan ke konsep yang lebih komple
   ```javascript
   console.log(person.name); // Mengakses dengan titik
   console.log(person["age"]); // Mengakses dengan bracket
+  console.log(work.name); // Mengakses dengan titik
+  console.log(work["position"]); // Mengakses dengan bracket
+  console.log(work.greet()); // Mengakses dengan bracket
   ```
 
 ### 2.3. DOM Manipulation
@@ -187,6 +281,35 @@ Setelah memahami dasar-dasar, klean akan melanjutkan ke konsep yang lebih komple
     alert("Button clicked!");
   });
   ```
+
+### 2.4. Manipulasi DOM Lanjutan
+
+#### 2.4.1. Membuat Elemen dengan `createElement`
+
+klean bisa membuat elemen HTML secara dinamis menggunakan metode `document.createElement()`. Setelah elemen dibuat, klean dapat menambahkannya ke dalam DOM menggunakan `appendChild()` atau `append()`.
+
+Contoh membuat elemen dan menambahkannya ke halaman:
+
+```javascript
+const newParagraph = document.createElement("p");
+
+newParagraph.textContent =
+  "Ini paragraf baru yang dibuat dengan createElement.";
+
+document.body.appendChild(newParagraph);
+```
+
+#### 2.4.2. Menggunakan `innerHTML` untuk Mengubah Konten
+
+`innerHTML` memungkinkan klean untuk mengubah atau menyisipkan HTML ke dalam elemen (awas **XSS** puhh ).
+
+Contoh menggunakan `innerHTML`:
+
+```javascript
+const content = document.getElementById("content");
+content.innerHTML =
+  "<h1>Judul Baru</h1><p>Paragraf ini diubah dengan innerHTML.</p>";
+```
 
 ## 3. Advanced JavaScript
 
@@ -218,6 +341,29 @@ Di bagian ini, klean akan mempelajari fitur dan konsep lanjutan dalam JavaScript
 
   fetchData();
   ```
+
+- **Callback**:
+
+  ```javascript
+  function fetchData(callback) {
+    setTimeout(() => {
+      const data = {
+        name: "Alice",
+        age: 24,
+        posistion: "Software Engineer",
+      };
+      callback(data);
+    }, 2000);
+  }
+
+  function handleData(data) {
+    console.log(data);
+  }
+
+  fetchData(handleData);
+  ```
+
+Fungsi `fetchData` menerima fungsi callback (`handleData`) sebagai argumen, yang kemudian dipanggil setelah `setTimeout` selesai dan `data` siap digunakan.
 
 ### 3.2. Modules
 
@@ -253,14 +399,14 @@ Di bagian ini, klean akan mempelajari fitur dan konsep lanjutan dalam JavaScript
 
   ```javascript
   function outerFunction() {
-    let outerVariable = "I'm outside!";
+    let outerVariable = "Aku, bluetooth? tch tidak akan!";
     return function innerFunction() {
       console.log(outerVariable);
     };
   }
 
   const inner = outerFunction();
-  inner(); // Output: "I'm outside!"
+  inner(); // Output: "Aku, bluetooth? tch tidak akan!"
   ```
 
 ## 4. Expert JavaScript
