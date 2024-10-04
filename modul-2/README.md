@@ -174,7 +174,7 @@ Setelah memahami dasar-dasar, klean akan melanjutkan ke konsep yang lebih komple
 - **Mendefinisikan Array**:
 
   ```javascript
-  let fruits = [🍏, 🍉, 🍊];
+  let fruits = [🍏, 🍉, 🍊]; // menyimpan beberapa nilai (buah) dalam satu variabel
   ```
 
 - **Manipulasi Array**:
