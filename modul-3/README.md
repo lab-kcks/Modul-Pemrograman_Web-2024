@@ -276,6 +276,8 @@ Pada bagian ini akkan dijelaskan bagaimana cara melakukan setup project Express 
 
   ![yarn_init](./images/yarn_init.png)
 
+  > **`Tambahan`**: buat file `.gitignore` kemudian isi dengan teks `node_modules` agar folder node_module tidak ikut masuk ke github.
+
 2. Instal dependensi `ExpressJS`
 
   ```bash
