@@ -35,15 +35,15 @@ Proses Transpilasi kode yang ditulis dalam TypeScript tidak dijalankan langsung 
 ### Mengapa Typescript😣???
 
 - **Integrasi IDE**
-  
+
   TypeScript dirancang untuk bekerja lebih baik dengan Code Editor seperti VS Code, sehingga memudahkan dalam penulisan dan perbaikan kode.
 
 - **Error Checking**
-  
+
   Salah satu keuntungan utama TypeScript adalah kemampuannya untuk menangkap kesalahan langsung saat penulisan kode, sehingga bug dapat diperbaiki sebelum program dijalankan.
 
 - **Scalable**
-  
+
   TypeScript sangat berguna dalam proyek berskala besar karena adanya tipe data yang lebih jelas, sehingga memudahkan pengembang dalam memahami dan menjaga kualitas kode.
 
 ### Javascript😁 vs Typescript😎
@@ -81,12 +81,12 @@ let name: string = "John"; // Tipe data string secara eksplisit
 ```typescript
 // JavaScript
 function add(a, b) {
-	return a + b;
+  return a + b;
 }
 
 // TypeScript
 function add(a: number, b: number): number {
-	return a + b;
+  return a + b;
 }
 ```
 
@@ -98,13 +98,13 @@ function add(a: number, b: number): number {
 ```javascript
 // TypeScript
 interface Person {
-	name: string;
-	age: number;
+  name: string;
+  age: number;
 }
 
 let person: Person = {
-	name: "Alice",
-	age: 25,
+  name: "Alice",
+  age: 25,
 };
 ```
 
@@ -117,24 +117,24 @@ let person: Person = {
 ```typescript
 // JavaScript
 class Animal {
-	constructor(name) {
-		this.name = name;
-	}
+  constructor(name) {
+    this.name = name;
+  }
 }
 
 let dog = new Animal("Dog");
 
 // TypeScript
 class Animal {
-	private name: string;
+  private name: string;
 
-	constructor(name: string) {
-		this.name = name;
-	}
+  constructor(name: string) {
+    this.name = name;
+  }
 
-	public getName(): string {
-		return this.name;
-	}
+  public getName(): string {
+    return this.name;
+  }
 }
 
 let dog: Animal = new Animal("Dog");
@@ -161,7 +161,7 @@ let lengthOfString: number = (value as string).length; // Asersi bahwa value ada
 ```typescript
 // TypeScript
 function greet(name: string, age?: number): string {
-	return age ? `Hello ${name}, age ${age}` : `Hello ${name}`;
+  return age ? `Hello ${name}, age ${age}` : `Hello ${name}`;
 }
 ```
 
@@ -174,7 +174,7 @@ function greet(name: string, age?: number): string {
 ```typescript
 // TypeScript
 function identity<T>(arg: T): T {
-	return arg;
+  return arg;
 }
 
 let output = identity<string>("Hello"); // Menggunakan generics dengan tipe string
@@ -182,9 +182,9 @@ let output = identity<string>("Hello"); // Menggunakan generics dengan tipe stri
 
 ## ExpressJS
 
-**`ExpressJS`** merupakan salah satu framework nodeJS populer yang digunakan untuk membuat aplikasi web dan API. Framework ini digunakan dengan tujuan agar developer tidak perlu membuat Back-End *from scratch* dan menghabiskan waktu mereka hanya untuk mengurus kode - kode inisiasi.
+**`ExpressJS`** merupakan salah satu framework nodeJS populer yang digunakan untuk membuat aplikasi web dan API. Framework ini digunakan dengan tujuan agar developer tidak perlu membuat Back-End _from scratch_ dan menghabiskan waktu mereka hanya untuk mengurus kode - kode inisiasi.
 
-Dengan adanya framework seperti ExpressJS ini, maka developer dapat lebih berfokus pada pengerjaan *bussiness logic* untuk aplikasi web yang akan dibuat.
+Dengan adanya framework seperti ExpressJS ini, maka developer dapat lebih berfokus pada pengerjaan _bussiness logic_ untuk aplikasi web yang akan dibuat.
 
 ### Cara Melakukan Inisiasi Project ExpressJS
 
@@ -192,10 +192,10 @@ Sebelum memulai proyek express, pastikan kalian telah menginstal `NodeJS` dan pa
 
 #### **Cara Menginstal `NodeJS`**
 
-- Download *prebuilt-installer* NodeJS (gunakan versi yang memiliki label `LTS`) pada [link berikut](https://nodejs.org/en/download/prebuilt-installer). Nantinya akan muncul tampilan seperti di bawah ini
+- Download _prebuilt-installer_ NodeJS (gunakan versi yang memiliki label `LTS`) pada [link berikut](https://nodejs.org/en/download/prebuilt-installer). Nantinya akan muncul tampilan seperti di bawah ini
   ![install_node](./images/install_node.png)
 
-- Install nodeJS melalui *prebuilt-installer* yang sudah kalian unduh.
+- Install nodeJS melalui _prebuilt-installer_ yang sudah kalian unduh.
 
 - Package Manager `NPM` juga akan terinstal.
 
@@ -208,7 +208,7 @@ Sebelum memulai proyek express, pastikan kalian telah menginstal `NodeJS` dan pa
   ```
 
   - Cek versi `NPM`
-  
+
   ```bash
   npm -v
   ```
@@ -228,7 +228,7 @@ Menginstal Package Manager `Yarn` dapat dilakukan dengan menggunakan perintah da
   > Catatan: flag `-g` perlu digunakan agar yarn dapat digunakan di lokasi manapun pada komputer kalian.
 
 - Periksa versi yarn menggunakan perintah berikut:
-  
+
   ```bash
   yarn -v
   ```
@@ -248,7 +248,7 @@ Menginstal Package Manager `PNPM` dapat dilakukan dengan menggunakan perintah da
   > Catatan: flag `-g` perlu digunakan agar pnpm dapat digunakan di lokasi manapun pada komputer kalian.
 
 - Periksa versi pnpm menggunakan perintah berikut:
-  
+
   ```bash
   pnpm -v
   ```
@@ -261,157 +261,159 @@ Pada bagian ini akkan dijelaskan bagaimana cara melakukan setup project Express 
 
 1. Buka terminal pada IDE kalian, kemudian mulai inisiasi proyek menggunakan `Package Manager` pilihan kalian.
 
-  ```bash
-  # Menggunakan NPM
-  npm init
+```bash
+# Menggunakan NPM
+npm init
 
-  # Menggunakan yarn
-  yarn init
+# Menggunakan yarn
+yarn init
 
-  # Menggunakan PNPM
-  pnpm init
-  ```
+# Menggunakan PNPM
+pnpm init
+```
 
-  Jawab pertanyaan yang diberikan. Jawaban dari pertanyaan tidak akan memengaruhi hasil dari proyek. hasilnya akan tampak seperti berikut:
+Jawab pertanyaan yang diberikan. Jawaban dari pertanyaan tidak akan memengaruhi hasil dari proyek. hasilnya akan tampak seperti berikut:
 
-  ![yarn_init](./images/yarn_init.png)
+![yarn_init](./images/yarn_init.png)
 
-  > **`Tambahan`**: buat file `.gitignore` kemudian isi dengan teks `node_modules` agar folder node_module tidak ikut masuk ke github.
+> **`Tambahan`**: buat file `.gitignore` kemudian isi dengan teks `node_modules` agar folder node_module tidak ikut masuk ke github.
 
 2. Instal dependensi `ExpressJS`
 
-  ```bash
-  # Menggunakan NPM
-  npm install express
+```bash
+# Menggunakan NPM
+npm install express
 
-  # Menggunakan yarn
-  yarn add express
+# Menggunakan yarn
+yarn add express
 
-  # Menggunakan PNPM
-  pnpm i express
-  ```
+# Menggunakan PNPM
+pnpm i express
+```
 
 3. Instal juga dependensi `typescript`, `@types/node`, `ts-node`, `nodemon` dan `@types/express` kali ini dengan flag `-D`
 
-  ```bash
-  # Menggunakan NPM
-  npm install -D typescript @types/node @types/express ts-node nodemon
+```bash
+# Menggunakan NPM
+npm install -D typescript @types/node @types/express ts-node nodemon
 
-  # Menggunakan yarn
-  yarn add -D typescript @types/node @types/express ts-node nodemon
+# Menggunakan yarn
+yarn add -D typescript @types/node @types/express ts-node nodemon
 
-  # Menggunakan PNPM
-  pnpm i -D typescript @types/node @types/express ts-node nodemon
-  ```
-  > Dependencies merupakan list package yang diperlukan oleh aplikasi untuk berjalan (pada tahap production), sementara devDependencies merupakan list package yang digunakan khusus pada saat tahap pengembangan (development) atau testing
+# Menggunakan PNPM
+pnpm i -D typescript @types/node @types/express ts-node nodemon
+```
+
+> Dependencies merupakan list package yang diperlukan oleh aplikasi untuk berjalan (pada tahap production), sementara devDependencies merupakan list package yang digunakan khusus pada saat tahap pengembangan (development) atau testing
 
 4. Buat file `tsconfig.json` untuk mengatur compiler typescript
 
-  ```bash
-  npx tsc --init
-  ```
+```bash
+npx tsc --init
+```
 
-  Nantinya akan muncul sebuah file bernama `tsconfig.json` yang isinya berbagai macam konfigurasi yang dapat digunakan pada compiler typescript nantinya.
-  
-  Namun untuk mempermudah pengaturan, kalian bisa hapus semua isi dari file `tsconfig.json` kemudian isi dengan pengaturan di bawah ini
+Nantinya akan muncul sebuah file bernama `tsconfig.json` yang isinya berbagai macam konfigurasi yang dapat digunakan pada compiler typescript nantinya.
 
-  ```json
-  {
-    "compilerOptions": {
-      "module": "commonjs",
-      "declaration": true,
-      "removeComments": true,
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "allowSyntheticDefaultImports": true,
-      "target": "ES2021",
-      "sourceMap": true,
-      "noEmit": false,
-      "outDir": "./dist",
-      "baseUrl": "./src",
-      "skipLibCheck": true,
-      "strict": true,
-      "strictNullChecks": false,
-      "noImplicitAny": true,
-      "strictBindCallApply": true,
-      "forceConsistentCasingInFileNames": false,
-      "noFallthroughCasesInSwitch": false,
-      "strictPropertyInitialization": false,
-      "esModuleInterop": true,
-      "moduleResolution": "node",
-      "resolveJsonModule": true,
-      "isolatedModules": true
-    }
+Namun untuk mempermudah pengaturan, kalian bisa hapus semua isi dari file `tsconfig.json` kemudian isi dengan pengaturan di bawah ini
+
+```json
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "noEmit": false,
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "strictBindCallApply": true,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true
   }
-  ```
+}
+```
 
 5. Buat folder bernama `src` kemudian buat pula file di dalam src dengan nama `index.ts`
 
-  Struktur direktori saat ini seharusnya berbentuk seperti pada di bawah ini.
-  ```
-  ./
-  ├───node_modules/
-  ├───src/
-  │     index.ts
-  │   
-  │ package.json
-  │ yarn.lock
-  ```
+Struktur direktori saat ini seharusnya berbentuk seperti pada di bawah ini.
 
-  > file yarn.lock akan berbeda - beda sesuai dengan package manager yang kalian gunakan
+```
+./
+├───node_modules/
+├───src/
+│     index.ts
+│
+│ package.json
+│ yarn.lock
+```
+
+> file yarn.lock akan berbeda - beda sesuai dengan package manager yang kalian gunakan
 
 6. Lakukan inisiasi express pada file `index.ts`. file ini akan menjadi file utama kita pada proyek ini
 
-  ```javascript
-  import express from 'express';
+```javascript
+import express from "express";
 
-  const app = express();
+const app = express();
 
-  app.use(express.json());
+app.use(express.json());
 
-  // check endpoint
-  app.get('/', (_, response) => {
-      response.status(200).send('Server is up and running 💫');
-  });
+// check endpoint
+app.get("/", (_, response) => {
+  response.status(200).send("Server is up and running 💫");
+});
 
-  const PORT = 4000;
-  app.listen(PORT, () => {
-      console.log(`Express is running on Port ${PORT}`);
-  });
-  ```
+const PORT = 4000;
+app.listen(PORT, () => {
+  console.log(`Express is running on Port ${PORT}`);
+});
+```
 
 7. Siapkan script untuk menjalankan website.
 
-  Pada file `package.json`, tambahkan script sesuai dengan teks di bawah agar website dapat dijalankan.
+Pada file `package.json`, tambahkan script sesuai dengan teks di bawah agar website dapat dijalankan.
 
-  ```json
-  "scripts": {
-    "build": "tsc --build",
-    "start": "node ./dist/index.js",
-    "start:dev": "nodemon ./src/index.ts"
-  },
-  ```
+```json
+"scripts": {
+  "build": "tsc --build",
+  "start": "node ./dist/index.js",
+  "start:dev": "nodemon ./src/index.ts"
+},
+```
 
-  Hasilnya akan tampak seperti ini
+Hasilnya akan tampak seperti ini
 
-  ![pckg_json](./images/pckg_json.png)
+![pckg_json](./images/pckg_json.png)
 
 8. Jalankan website dengan command berikut
 
-  ```bash
-  # Menggunakan NPM
-  npm run start:dev
+```bash
+# Menggunakan NPM
+npm run start:dev
 
-  # Menggunakan yarn
-  yarn start:dev
+# Menggunakan yarn
+yarn start:dev
 
-  # Menggunakan PNPM
-  pnpm start:dev
-  ```
+# Menggunakan PNPM
+pnpm start:dev
+```
 
 9. Buka website kalian pada `http://localhost:PORT` dengan `PORT` merupakan nilai PORT yang sudah kalian deklarasikan pada file `index.ts`
 
-  ![init_result](./images/init_result.png)
+![init_result](./images/init_result.png)
 
 10. Selamat, kalian telah membuat endpoint pertama kalian menggunakan `ExpressJS + TypeScript`
 
@@ -425,83 +427,83 @@ Dari proyek yang sudah kita buat sebelumnya, kali ini kita akan mengubah struktu
 
 1. Buat folder `router` pada `src` kemudian isi dengan file `index.ts` dan `food.router.ts`
 
-  Strukturnya akan tampak seperti berikut:
+Strukturnya akan tampak seperti berikut:
 
-  ```
-  ./
-  ├───node_modules/
-  ├───src/
-  │     ├───router/
-  │     │   ├─food.router.ts
-  │     │   │ index.ts
-  │     │
-  │     │ index.ts
-  │   
-  │ package.json
-  │ yarn.lock
-  ```
+```
+./
+├───node_modules/
+├───src/
+│     ├───router/
+│     │   ├─food.router.ts
+│     │   │ index.ts
+│     │
+│     │ index.ts
+│
+│ package.json
+│ yarn.lock
+```
 
 2. Selanjutnya, kita akan isi `food.router.ts` dengan beberapa endpoint
-  
-  ```typescript
-  import express from 'express'
 
-  const router = express.Router();
+```typescript
+import express from "express";
 
-  router.get('/pizza', (_, res) => {
-      res.status(200).send('Mmm... Pizza... 🍕');
-  });
+const router = express.Router();
 
-  router.get('/cookie', (_, res) => {
-      res.status(200).send('Get some Cookie... 🍪');
-  });
+router.get("/pizza", (_, res) => {
+  res.status(200).send("Mmm... Pizza... 🍕");
+});
 
-  router.get('/donut', (_, res) => {
-      res.status(200).send('Do Not... 🍩');
-  });
+router.get("/cookie", (_, res) => {
+  res.status(200).send("Get some Cookie... 🍪");
+});
 
-  export default router;
-  ```
+router.get("/donut", (_, res) => {
+  res.status(200).send("Do Not... 🍩");
+});
+
+export default router;
+```
 
 3. Panggil food router yang sudah dibuat sebelumnya pada file `router/index.ts`
 
-  ```typescript
-  import express from 'express';
-  const router = express.Router();
+```typescript
+import express from "express";
+const router = express.Router();
 
-  import foodRouter from './food.router';
+import foodRouter from "./food.router";
 
-  router.use('/food', foodRouter);
+router.use("/food", foodRouter);
 
-  export default router;
-  ```
+export default router;
+```
 
 4. Terakhir, gunakan router sebelumnya pada file `src/index.ts` dengan mengubah sebagian dari isinya
 
-  ```typescript
-  import express from 'express';
-  import router from './router';  // import routernya
+```typescript
+import express from "express";
+import router from "./router"; // import routernya
 
-  const app = express();
+const app = express();
 
-  app.use(express.json());
+app.use(express.json());
 
-  // check endpoint
-  app.get('/', (_, response) => {
-      response.status(200).send('Server is up and running 💫');
-  });
+// check endpoint
+app.get("/", (_, response) => {
+  response.status(200).send("Server is up and running 💫");
+});
 
-  app.use(router);  // tambahkan baris ini untuk menggunakan router
+app.use(router); // tambahkan baris ini untuk menggunakan router
 
-  const PORT = 4000;
-  app.listen(PORT, () => {
-      console.log(`Express is running on Port ${PORT}`);
-  });
-  ```
+const PORT = 4000;
+app.listen(PORT, () => {
+  console.log(`Express is running on Port ${PORT}`);
+});
+```
 
 5. Sekarang apabila kalian menjalankan websitenya, kalian akan mendapati beberapa endpoint baru.
 
-  ![new_router](./images/new_router.png)
+![new_router](./images/new_router.png)
 
 Selain `Get`, express juga mendukung berbagai metode lain seperti `Post`, `Patch`, `Put`, dan `Delete`. Berikut untuk lebih jelasnya.
 
@@ -513,18 +515,16 @@ Contoh Kode:
 
 ```typescript
 // Rute GET untuk mendapatkan semua data pengguna
-router.get('/users', (req: Request, res: Response) => {
-  res.status(200).json({ message: 'Retrieve all users' });
+router.get("/users", (req: Request, res: Response) => {
+  res.status(200).json({ message: "Retrieve all users" });
 });
 
 // Rute GET untuk mendapatkan data spesifik dari pengguna berdasarkan ID
-router.get('/users/:id', (req: Request, res: Response) => {
+router.get("/users/:id", (req: Request, res: Response) => {
   const { id } = req.params;
   res.status(200).json({ message: `Retrieve user with ID: ${id}` });
 });
 ```
-
-
 
 #### **`POST`**
 
@@ -534,9 +534,9 @@ Contoh Kode:
 
 ```typescript
 // Rute POST untuk menambah pengguna baru
-router.post('/users', (req: Request, res: Response) => {
+router.post("/users", (req: Request, res: Response) => {
   const { name, email } = req.body;
-  res.status(201).json({ message: 'User created', data: { name, email } });
+  res.status(201).json({ message: "User created", data: { name, email } });
 });
 ```
 
@@ -548,10 +548,12 @@ Contoh Kode:
 
 ```typescript
 // Rute PATCH untuk memperbarui sebagian data pengguna berdasarkan ID
-router.patch('/users/:id', (req: Request, res: Response) => {
+router.patch("/users/:id", (req: Request, res: Response) => {
   const { id } = req.params;
   const { email } = req.body;
-  res.status(200).json({ message: `User with ID: ${id} updated`, data: { email } });
+  res
+    .status(200)
+    .json({ message: `User with ID: ${id} updated`, data: { email } });
 });
 ```
 
@@ -563,10 +565,12 @@ Contoh Kode:
 
 ```typescript
 // Rute PUT untuk memperbarui data pengguna secara menyeluruh berdasarkan ID
-router.put('/users/:id', (req: Request, res: Response) => {
+router.put("/users/:id", (req: Request, res: Response) => {
   const { id } = req.params;
   const { name, email } = req.body;
-  res.status(200).json({ message: `User with ID: ${id} replaced`, data: { name, email } });
+  res
+    .status(200)
+    .json({ message: `User with ID: ${id} replaced`, data: { name, email } });
 });
 ```
 
@@ -578,7 +582,7 @@ Contoh Kode:
 
 ```typescript
 // Rute DELETE untuk menghapus pengguna berdasarkan ID
-router.delete('/users/:id', (req: Request, res: Response) => {
+router.delete("/users/:id", (req: Request, res: Response) => {
   const { id } = req.params;
   res.status(200).json({ message: `User with ID: ${id} deleted` });
 });
@@ -595,13 +599,13 @@ Request Head atau header permintaan adalah metadata yang dikirimkan dari klien k
 Contoh Kode:
 
 ```typescript
-router.get('/headers', (req: Request, res: Response) => {
-  const contentType = req.headers['content-type'];
-  const authorization = req.headers['authorization'];
-  
+router.get("/headers", (req: Request, res: Response) => {
+  const contentType = req.headers["content-type"];
+  const authorization = req.headers["authorization"];
+
   res.status(200).json({
-    message: 'Headers received',
-    headers: { contentType, authorization, }
+    message: "Headers received",
+    headers: { contentType, authorization },
   });
 });
 ```
@@ -613,11 +617,11 @@ Request Body berisi data yang dikirimkan oleh klien ke server, biasanya melalui 
 Contoh Kode:
 
 ```typescript
-router.post('/data', (req: Request, res: Response) => {
+router.post("/data", (req: Request, res: Response) => {
   const { name, email } = req.body;
-  
+
   res.status(201).json({
-    message: 'Data received',
+    message: "Data received",
     data: {
       name,
       email,
@@ -633,9 +637,9 @@ Request Param digunakan untuk mengambil data dari URL yang bersifat dinamis, bia
 Contoh Kode:
 
 ```typescript
-router.get('/users/:id', (req: Request, res: Response) => {
+router.get("/users/:id", (req: Request, res: Response) => {
   const { id } = req.params;
-  
+
   res.status(200).json({
     message: `User with ID: ${id} found`,
   });
@@ -649,11 +653,11 @@ Request Query digunakan untuk mendapatkan parameter tambahan dari URL, biasanya 
 Contoh Kode:
 
 ```typescript
-router.get('/search', (req: Request, res: Response) => {
+router.get("/search", (req: Request, res: Response) => {
   const { keyword, page, limit } = req.query;
-  
+
   res.status(200).json({
-    message: 'Search results',
+    message: "Search results",
     filters: {
       keyword,
       page: Number(page),
@@ -675,18 +679,17 @@ Kode status HTTP adalah angka yang menunjukkan status hasil permintaan klien. Ko
 
   Kode status 2XX menunjukkan bahwa **permintaan berhasil**. Kode ini digunakan saat data dikirimkan dengan benar atau saat operasi selesai dengan sukses. Contoh kode 2XX yang sering digunakan adalah `200 OK`, `201 Created`, dan `204 No Content`.
 
-- Code `3XX`: 
+- Code `3XX`:
 
   Kode status 3XX digunakan untuk mengindikasikan bahwa **permintaan harus dialihkan ke lokasi lain**. Ini sering digunakan untuk redirect, seperti saat konten berpindah ke URL baru. Contoh kode 3XX yang sering digunakan adalah `301 Moved Permanently`, `302 Found`, dan `304 Not Modified`.
 
 - Code `4XX`:
-    
+
   Kode status 4XX menunjukkan **kesalahan di sisi klien**. Kode ini berarti bahwa permintaan tidak dapat diproses karena masalah yang disebabkan oleh klien, seperti kesalahan autentikasi atau data yang tidak valid. Contoh kode 4XX yang sering digunakan adalah `400 Bad Request`, `401 Unauthorized`, dan `404 Not Found`.
 
 - Code `5XX`:
 
   Kode status 5XX menunjukkan bahwa terjadi **kesalahan di sisi server**. Hal ini biasanya berarti bahwa server tidak dapat memenuhi permintaan karena masalah internal atau gangguan pada server. Contoh kode 5XX yang sering digunakan adalah `500 Internal Server Error`, `502 Bad Gateway`, dan `503 Service Unavailable`.
-
 
 #### **Cara Membuat Response yang Sesuai**
 
@@ -699,7 +702,6 @@ Response yang baik berarti memiliki informasi yang lengkap dan mudah untuk dibac
 - `data`: Objek yang berisi semua data yang diminta klien
 
 - `metadata (opsional)`: Metadata biasanya digunakan pada permintaan yang memiliki pagination dan sejenisnya. Metadata menunjukkan bagaimana kondisi data yang diberikan.
-
 
 ## MongoDB
 
@@ -785,15 +787,131 @@ const connectionString = process.env.ATLAS_URI || "";
 const client = new MongoClient(connectionString);
 let conn;
 try {
-	conn = await client.connect();
+  conn = await client.connect();
 } catch (e) {
-	console.error(e);
+  console.error(e);
 }
 let db = conn.db("sample_training");
 export default db;
 ```
 
 Kode ini menggunakan string koneksi yang disediakan dalam file .env dan membuat klien baru. Setelah klien di-define, kode ini akan mencoba membuat koneksi baru ke database. Database kemudian diekspor jika koneksi berhasil. Hal ini memberikan sebuah interface yang seragam yang dapat digunakan kembali di semua modul yang akan dibuat selanjutnya.
+
+### MongoDB Atlas connection string
+
+### 1. Membuat Cluster di MongoDB Atlas
+
+1. **Daftar** atau **Login** ke [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register).
+
+```javascript
+// Di bacaan sebelumnya sudah ada, tapi gaapa kita tambahi juga di sini
+```
+
+![node_express](./images/create-new-projects.png)
+
+2. **Buat Cluster Baru**:
+   - Setelah login, klik **"Create a new projects"**.
+   - Klik **Create projects**.
+
+![node_express](./images/create-a-projects.png)
+
+![node_express](./images/tambah-anggota.png)
+
+- Setelah itu bisa klik **Create Projects** Pilih **provider** (misalnya AWS, GCP, atau Azure) dan lokasi data center yang diinginkan. Pilih cluster sesuai dengan kebutuhan (Free Tier untuk versi gratis).
+
+### 2. Mendapatkan Connection String
+
+1. Setelah cluster berhasil dibuat, klik **Connect** pada cluster yang baru saja dibuat.
+
+![node_express](./images/connect-clusters.png)
+
+2. Pilih **Connect**.
+3. Pada bagian **Connection String**, akan melihat string seperti ini:
+
+![node_express](./images/mongodb-connect.png)
+
+4. klik MongoDB for VS Code (klo ada yang ga pake VS Code bisa pake drivers, based on bacaan sebelumnya)
+
+![node_express](./images/copy-untuk-string.png)
+
+```plaintext
+mongodb+srv://<username>:<password>@cluster0.xxxxxxxxxxx
+```
+
+4. **Salin connection string**, lalu ganti `<username>` dan `<password>` dengan username dan password yang dibuat di langkah sebelumnya.
+5. **Tempelkan string tersebut** di file `.env` seperti ini:
+
+   ```conf
+   MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.xxxxxxxxxxx
+   ```
+
+### 3. Menggunakan Connection String di ExpressJS
+
+Ikuti langkah berikut untuk menggunakan connection string di aplikasi ExpressJS:
+
+1. **Instal dotenv dan MongoDB client**, tapi karna client sudah, jadi yang ini pakai mongoose:
+
+   ```bash
+   npm install dotenv mongoose
+   ```
+
+2. **Buat file `.env`** di root folder aplikasi dengan menambahkan connection string dan port server seperti ini:
+
+   ```conf
+   MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.xxxxxxxxxxx
+   PORT=8080
+   ```
+
+3. **Buat `loadEnvironment.mjs`** atau **`configDB.ts`** untuk mengimpor variabel lingkungan dari `.env`:
+
+   ```javascript
+   import dotenv from "dotenv";
+   dotenv.config();
+   ```
+
+4. **Buat koneksi MongoDB lib mongoose di `server/db/configDb.ts`**:
+
+   ```javascript
+   const mongoose = require("mongoose");
+
+   const connectDB = async () => {
+     const url = process.env.MONGO_DB_URI || "";
+     try {
+       await mongoose.connect(url);
+       console.log("MongoDB okee");
+     } catch (error) {
+       console.log("Ngga bisa connect ngab " + error.message);
+     }
+   };
+   module.exports = connectDB;
+   ```
+
+5. **Gunakan koneksi di `index.mjs`**:
+
+   ```javascript
+   import express from "express";
+   import "./loadEnvironment.mjs"; // Load environment variables
+   import db from "./server/db/configDb"; // Import MongoDB connection
+
+   connectDB();
+
+   const app = express();
+   const port = process.env.PORT || 3000;
+
+   app.get("/", (req, res) => {
+     res.send("Welcome to Express + MongoDB Atlas API!");
+   });
+
+   app.listen(port, () => {
+     console.log(`Server running on http://localhost:${port}`);
+   });
+   ```
+
+Setelah semua langkah selesai, dapat menjalankan aplikasi dengan menjalankan perintah:
+
+```bash
+node index.mjs
+```
 
 ### Membuat CRUD API dengan ExpressJS dan MongoClient🤠
 
@@ -830,9 +948,9 @@ app.use("/posts", posts);
 ```javascript
 // Get 50 posts
 router.get("/", async (req, res) => {
-	let collection = await db.collection("posts");
-	let results = await collection.find({}).limit(50).toArray();
-	res.send(results).status(200);
+  let collection = await db.collection("posts");
+  let results = await collection.find({}).limit(50).toArray();
+  res.send(results).status(200);
 });
 ```
 
@@ -846,15 +964,15 @@ router.get("/", async (req, res) => {
 ```javascript
 // Get new posts
 router.get("/latest", async (req, res) => {
-	let collection = await db.collection("posts");
-	let results = await collection
-		.aggregate([
-			{ $project: { author: 1, title: 1, tags: 1, date: 1 } },
-			{ $sort: { date: -1 } },
-			{ $limit: 3 },
-		])
-		.toArray();
-	res.send(results).status(200);
+  let collection = await db.collection("posts");
+  let results = await collection
+    .aggregate([
+      { $project: { author: 1, title: 1, tags: 1, date: 1 } },
+      { $sort: { date: -1 } },
+      { $limit: 3 },
+    ])
+    .toArray();
+  res.send(results).status(200);
 });
 ```
 
@@ -866,11 +984,11 @@ Pipeline agregasi digunakan untuk memproyeksikan fields yang diperlukan, menguru
 ```javascript
 // Get by id
 router.get("/:id", async (req, res) => {
-	let collection = await db.collection("posts");
-	let query = { _id: ObjectId(req.params.id) };
-	let result = await collection.findOne(query);
-	if (!result) res.send("Not found").status(404);
-	else res.send(result).status(200);
+  let collection = await db.collection("posts");
+  let query = { _id: ObjectId(req.params.id) };
+  let result = await collection.findOne(query);
+  if (!result) res.send("Not found").status(404);
+  else res.send(result).status(200);
 });
 ```
 
@@ -883,11 +1001,11 @@ router.get("/:id", async (req, res) => {
 ```javascript
 // Create new post
 router.post("/", async (req, res) => {
-	let collection = await db.collection("posts");
-	let newDocument = req.body;
-	newDocument.date = new Date();
-	let result = await collection.insertOne(newDocument);
-	res.send(result).status(204);
+  let collection = await db.collection("posts");
+  let newDocument = req.body;
+  newDocument.date = new Date();
+  let result = await collection.insertOne(newDocument);
+  res.send(result).status(204);
 });
 ```
 
@@ -899,13 +1017,13 @@ Mengambil body dari request, menambahkan tanggal sebagai timestamp, dan menyimpa
 ```javascript
 // Add new comment
 router.patch("/comment/:id", async (req, res) => {
-	const query = { _id: ObjectId(req.params.id) };
-	const updates = {
-		$push: { comments: req.body },
-	};
-	let collection = await db.collection("posts");
-	let result = await collection.updateOne(query, updates);
-	res.send(result).status(200);
+  const query = { _id: ObjectId(req.params.id) };
+  const updates = {
+    $push: { comments: req.body },
+  };
+  let collection = await db.collection("posts");
+  let result = await collection.updateOne(query, updates);
+  res.send(result).status(200);
 });
 ```
 
@@ -917,10 +1035,10 @@ router.patch("/comment/:id", async (req, res) => {
 ```javascript
 // Delete post by id
 router.delete("/:id", async (req, res) => {
-	const query = { _id: ObjectId(req.params.id) };
-	const collection = db.collection("posts");
-	let result = await collection.deleteOne(query);
-	res.send(result).status(200);
+  const query = { _id: ObjectId(req.params.id) };
+  const collection = db.collection("posts");
+  let result = await collection.deleteOne(query);
+  res.send(result).status(200);
 });
 ```
 
