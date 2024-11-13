@@ -45,7 +45,7 @@
 npm create vue@latest
 ```
 
-2. Setelah itu, akan ada banyak pilihan, lalu pilih `No` dengan menekan enter kecuali pada `Vue Router`.
+2. Setelah itu, akan ada banyak pilihan, lalu pilih `No` dengan menekan enter kecuali pada `Vue Router` dan `TypeScript`.
 
 ```
 ✔ Project name: … <your-project-name>
