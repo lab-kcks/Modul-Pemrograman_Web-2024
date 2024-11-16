@@ -6,7 +6,7 @@
 
 1. Buka website https://nodejs.org/en/download
 
-![Downloadpage](image.png)
+![Downloadpage](./assets/image.png)
 
 2. Disarankan untuk download Node versi (LTS)
 3. Buka file download, lalu klik Next
@@ -35,7 +35,7 @@
 
 9. Buka CMD dan ketik `node -v` atau `npm -v` untuk melakukan verifikasi instalasi
 
-![versi](image-1.png)
+![versi](./assets/image-1.png)
 
 ### Instalasi Vue
 
@@ -89,23 +89,23 @@ Contoh SFC :
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        count: 0,
-      };
-    },
-  };
+	export default {
+		data() {
+			return {
+				count: 0,
+			};
+		},
+	};
 </script>
 
 <template>
-  <button @click="count++">Hitung: {{ count }}</button>
+	<button @click="count++">Hitung: {{ count }}</button>
 </template>
 
 <style scoped>
-  button {
-    font-weight: bold;
-  }
+	button {
+		font-weight: bold;
+	}
 </style>
 ```
 
@@ -121,34 +121,34 @@ Dengan Options API, logika komponen dapat didefinisikan menggunakan _object of o
 
 ```html
 <script>
-  export default {
-    // Properties returned dari data() menjadi reactive state
-    // dan akan ditampilkan dengan `this`.
-    data() {
-      return {
-        count: 0,
-      };
-    },
+	export default {
+		// Properties returned dari data() menjadi reactive state
+		// dan akan ditampilkan dengan `this`.
+		data() {
+			return {
+				count: 0,
+			};
+		},
 
-    // Methods adalah fungsi yang mengubah status dan trigger updates
-    // They can be bound as event handlers in templates.
-    methods: {
-      increment() {
-        this.count++;
-      },
-    },
+		// Methods adalah fungsi yang mengubah status dan trigger updates
+		// They can be bound as event handlers in templates.
+		methods: {
+			increment() {
+				this.count++;
+			},
+		},
 
-    // Lifecycle hooks dipanggil pada tahap yang berbeda
-    // dari component's lifecycle.
-    // This function will be called when the component is mounted.
-    mounted() {
-      console.log(`The initial count is ${this.count}.`);
-    },
-  };
+		// Lifecycle hooks dipanggil pada tahap yang berbeda
+		// dari component's lifecycle.
+		// This function will be called when the component is mounted.
+		mounted() {
+			console.log(`The initial count is ${this.count}.`);
+		},
+	};
 </script>
 
 <template>
-  <button @click="increment">Count is: {{ count }}</button>
+	<button @click="increment">Count is: {{ count }}</button>
 </template>
 ```
 
@@ -160,24 +160,24 @@ Contohnya, _imports_ dan fungsi yang dideklarasikan dalam `<script setup>` dapat
 
 ```html
 <script setup>
-  import { ref, onMounted } from "vue";
+	import { ref, onMounted } from "vue";
 
-  // reactive state
-  const count = ref(0);
+	// reactive state
+	const count = ref(0);
 
-  // Fungsi yang mengubah status dan trigger updates
-  function increment() {
-    count.value++;
-  }
+	// Fungsi yang mengubah status dan trigger updates
+	function increment() {
+		count.value++;
+	}
 
-  // lifecycle hooks
-  onMounted(() => {
-    console.log(`The initial count is ${count.value}.`);
-  });
+	// lifecycle hooks
+	onMounted(() => {
+		console.log(`The initial count is ${count.value}.`);
+	});
 </script>
 
 <template>
-  <button @click="increment">Count is: {{ count }}</button>
+	<button @click="increment">Count is: {{ count }}</button>
 </template>
 ```
 
@@ -189,13 +189,13 @@ Contohnya, atributnya adalah `src` dan ekspressionnya adalah apa pun yang ada da
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        image: "./assets/images/socks_green.jpg",
-      };
-    },
-  };
+	export default {
+		data() {
+			return {
+				image: "./assets/images/socks_green.jpg",
+			};
+		},
+	};
 </script>
 <img :src="image" />
 ```
@@ -208,16 +208,16 @@ Dengan _Options API_, kita menggunakan opsi `data()` untuk mendeklarasikan state
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        count: 0
-      }
-    },
-    mounted() {
-      console.log(this.count)
-      this.count += 1  // data juga bisa dimutasi
-    }
+	export default {
+	  data() {
+	    return {
+	      count: 0
+	    }
+	  },
+	  mounted() {
+	    console.log(this.count)
+	    this.count += 1  // data juga bisa dimutasi
+	  }
 </script>
 ```
 
@@ -231,21 +231,21 @@ Ini memastikan bahwa metode tersebut tetap memiliki nilai `this` yang benar jika
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        count: 0
-      }
-    },
-    methods: {
-      increment() {
-        this.count++
-      }
-    },
-    mounted() {
-      // Metode dapat dipanggil dalam hook siklus hidup atau metode lainnya
-      this.increment()
-    }
+	export default {
+	  data() {
+	    return {
+	      count: 0
+	    }
+	  },
+	  methods: {
+	    increment() {
+	      this.count++
+	    }
+	  },
+	  mounted() {
+	    // Metode dapat dipanggil dalam hook siklus hidup atau metode lainnya
+	    this.increment()
+	  }
 </script>
 ```
 
@@ -253,7 +253,7 @@ Metode-metode ini dapat diakses dari dalam template komponen. Dalam template, me
 
 ```html
 <template>
-  <button @click="increment">{{ count }}</button>
+	<button @click="increment">{{ count }}</button>
 </template>
 ```
 
@@ -265,13 +265,13 @@ Contoh penggunaannya yaitu dengan memberikan suatu object ke `:class` (kependeka
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        isError: true,
-      };
-    },
-  };
+	export default {
+		data() {
+			return {
+				isError: true,
+			};
+		},
+	};
 </script>
 <div :class="{ text-danger: isError }">Error</div>
 ```
@@ -311,19 +311,19 @@ Directive `v-if` digunakan untuk menrender berdasarkan suatu kondisi. `v-if` dap
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        items: [
-          { id: 1, message: "Foo" },
-          { id: 2, message: "Bar" },
-        ],
-      };
-    },
-  };
+	export default {
+		data() {
+			return {
+				items: [
+					{ id: 1, message: "Foo" },
+					{ id: 2, message: "Bar" },
+				],
+			};
+		},
+	};
 </script>
 <template>
-  <li v-for="item in items" :key="item.id">{{ item.message}}</li>
+	<li v-for="item in items" :key="item.id">{{ item.message}}</li>
 </template>
 ```
 
@@ -341,17 +341,17 @@ Inline JavaScript yang akan dieksekusi saat event di-trigger, biasanya digunakan
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        count: 0,
-      };
-    },
-  };
+	export default {
+		data() {
+			return {
+				count: 0,
+			};
+		},
+	};
 </script>
 <template>
-  <button @click="count++">Add 1</button>
-  <p>Count is: {{ count }}</p>
+	<button @click="count++">Add 1</button>
+	<p>Count is: {{ count }}</p>
 </template>
 ```
 
@@ -361,21 +361,21 @@ Biasanya logika pada suatu event handler panjang atau komplex, sehingga tidak da
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        name: "vue jaya",
-      };
-    },
-    methods: {
-      greet() {
-        alert(`Hello ${this.name}!`);
-      },
-    },
-  };
+	export default {
+		data() {
+			return {
+				name: "vue jaya",
+			};
+		},
+		methods: {
+			greet() {
+				alert(`Hello ${this.name}!`);
+			},
+		},
+	};
 </script>
 <template>
-  <button @click="greet">Greet</button>
+	<button @click="greet">Greet</button>
 </template>
 ```
 
@@ -389,18 +389,18 @@ Dengan demikian, ketika pengguna memasukkan nilai pada input, nilai variabel dat
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        message: "",
-      };
-    },
-  };
+	export default {
+		data() {
+			return {
+				message: "",
+			};
+		},
+	};
 </script>
 
 <template>
-  <p>Message is: {{ message }}</p>
-  <input v-model="message" placeholder="edit me" />
+	<p>Message is: {{ message }}</p>
+	<input v-model="message" placeholder="edit me" />
 </template>
 ```
 
@@ -415,30 +415,30 @@ Manfaat :
 
 ```html
 <template>
-  <p>Full Name: {{ fullName }}</p>
-  <p>
-    <label for="firstName">First Name: </label>
-    <input id="firstName" type="text" v-model="firstName" />
-  </p>
-  <p>
-    <label for="lastName">Last Name: </label>
-    <input id="lastName" type="text" v-model="lastName" />
-  </p>
+	<p>Full Name: {{ fullName }}</p>
+	<p>
+		<label for="firstName">First Name: </label>
+		<input id="firstName" type="text" v-model="firstName" />
+	</p>
+	<p>
+		<label for="lastName">Last Name: </label>
+		<input id="lastName" type="text" v-model="lastName" />
+	</p>
 </template>
 <script>
-  export default {
-    data() {
-      return {
-        firstName: "",
-        lastName: "",
-      };
-    },
-    computed: {
-      fullName() {
-        return this.firstName + " " + this.lastName;
-      },
-    },
-  };
+	export default {
+		data() {
+			return {
+				firstName: "",
+				lastName: "",
+			};
+		},
+		computed: {
+			fullName() {
+				return this.firstName + " " + this.lastName;
+			},
+		},
+	};
 </script>
 ```
 
@@ -454,11 +454,11 @@ Sebagai contoh, `onMounted` dapat digunakan untuk menjalankan kode setekah kompo
 
 ```html
 <script setup>
-  import { onMounted } from "vue";
+	import { onMounted } from "vue";
 
-  onMounted(() => {
-    console.log(`the component is now mounted.`);
-  });
+	onMounted(() => {
+		console.log(`the component is now mounted.`);
+	});
 </script>
 ```
 
@@ -488,17 +488,88 @@ Ketika `ref` digunakan didalam `v-for`, nilai ref yang dihasilkan akan berupa ar
 
 ```html
 <script>
-  export default {
-    data() {
-      return {
-        list: [1, 2, 3],
-      };
-    },
-  };
+	export default {
+		data() {
+			return {
+				list: [1, 2, 3],
+			};
+		},
+	};
 </script>
 <template>
-  <ul>
-    <li v-for="item in list" ref="items">{{ item }}</li>
-  </ul>
+	<ul>
+		<li v-for="item in list" ref="items">{{ item }}</li>
+	</ul>
 </template>
 ```
+
+# Tailwind CSS
+
+## Introduction
+
+Tailwind CSS adalah sebuah framework CSS untuk mempermudah styling dan layouting website. Dengan Tailwind, styling dapat dilakukan dengan class-class atau kode tertentu untuk mengatur tampilan website mulai dari warna, ukuran, margin, padding, dan lainnya tanpa perlu melakukan defining CSS _from scratch_. Sehingga, untuk melakukan styling hanya perlu menambahkan kelas-kelas pada HTML sesuai kebutuhan.
+
+![with-without-tailwind](./assets/with-without-tailwind.png)
+
+## Instalasi Tailwind CSS pada Vue
+
+Setelah melakukan init project Vue, perlu dilakukan langkah-langkah berikut untuk integrasi Tailwind CSS pada project Vue yang telah di-init.
+
+1. Melakukan instalasi tailwindcss dan dependecies-nya.
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
+
+2. Generate file `tailwind.config.js` sebagai file konfigurasi Tailwind CSS dan file `postcss.config.json`.
+
+```bash
+npx tailwindcss init -p
+```
+
+3. Tambahkan konfigurasi path template file pada `tailwind.config.js` untuk mengaktifkan Tailwind CSS di setiap file yang di-render.
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+	// Konfigurasi yang perlu ditambahkan:
+	content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+	// notes: sesuaikan file path dengan kebutuhan kalian dan pastikan file path-nya benar
+	theme: {
+		extend: {},
+	},
+	plugins: [],
+};
+```
+
+4. Tambahkan `@tailwind` directives pada file CSS pada project Vue. Bisa dilakukan di `base.css` atau `main.css` jika file tersebut yang di-import di template `views`, atau bisa menambahkan file CSS yang terpisah dan pastikan import file yang benar pada template `views`.
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+5. Start project Vue
+
+```bash
+npm run dev
+```
+
+## Contoh penggunaan Tailwind CSS pada Vue
+
+```html
+<template>
+	<main>
+		<p class="text-white text-5xl font-bold text-center py-96">Hello World</p>
+	</main>
+</template>
+```
+
+![vue-tailwind](./assets//vue-tailwind.png)
+
+## Dokumentasi Tailwind CSS
+
+Untuk mempelajari dan menggunakan Tailwind CSS, bisa menuju ke link documentation resmi dari Tailwind CSS berikut karena documentation yang diberikan sudah sangat lengkap dan mencakup hampir keseluruhan penggunaan Tailwind CSS.
+
+**[Dokumentasi Tailwind CSS](https://tailwindcss.com/docs/installation)**
