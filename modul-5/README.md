@@ -186,109 +186,56 @@ Komponen ini berada pada direktori `layouts/` dan digunakan untuk template halam
     };
     ```
 
-### Fitur Komponen
+### _Props_ dan _Events_
 
--   _Props_ dan _Events_
+Props digunakan untuk mengirim data dari _parent component_ ke _child component_. Sebaliknya, events digunakan untuk mengirim data/sinyal dari _child component_ ke _parent component_. Berikut adalah contoh code beserta penjelasannya:
 
-    Props digunakan untuk mengirim data dari _parent component_ ke _child component_. Sebaliknya, events digunakan untuk mengirim data/sinyal dari _child component_ ke _parent component_. Berikut adalah contoh code beserta penjelasannya:
+```ts
+<template>
+	<div @click="$emit('userSelected', user.id)">
+		{{ user.name }}
+	</div>
+</template>
 
-    ```ts
-    <template>
-    	<div @click="$emit('userSelected', user.id)">
-    		{{ user.name }}
-    	</div>
-    </template>
+<script lang="ts">
+	import { defineComponent, PropType } from 'vue';
 
-    <script lang="ts">
-    	import { defineComponent, PropType } from 'vue';
+	export default defineComponent({
+		props: {
+			user: {
+			type: Object as PropType<{ id: number; name: string }>,
+			required: true,
+			},
+		},
+		emits: ['userSelected'],
+	});
+</script>
+```
 
-    	export default defineComponent({
-    		props: {
-    			user: {
-    			type: Object as PropType<{ id: number; name: string }>,
-    			required: true,
-    			},
-    		},
-    		emits: ['userSelected'],
-    	});
-    </script>
-    ```
+-   Props (`user`)
 
-    -   Props (`user`)
+    -   Komponen tersebut menerima prop dengan nama `user`
+    -   Prop dideklarasikan sebagai Object dan prop ini juga wajib diisi
+    -   Bisa diakses dalam template menggunakan `user.name` dan `user.id`
+    -   _Parent component_ harus memberikan data object user saat menggunakan komponen ini
 
-        -   Komponen tersebut menerima prop dengan nama `user`
-        -   Prop dideklarasikan sebagai Object dan prop ini juga wajib diisi
-        -   Bisa diakses dalam template menggunakan `user.name` dan `user.id`
-        -   _Parent component_ harus memberikan data object user saat menggunakan komponen ini
+-   Events (`userSelected`)
+    -   Event dibuat menggunakan `$emit`
+    -   Properti `@click` menandakan event akan dipanggil saat elemen di-klik
+    -   `userSelected` adalah nama event yang akan diterima parent
+    -   `user.id` adalah data yang dikirim ke parent melalui event
+    -   _Parent_ bisa menangkap event ini dengan `@userSelected="<method-name>"`
 
-    -   Events (`userSelected`)
-        -   Event dibuat menggunakan `$emit`
-        -   Properti `@click` menandakan event akan dipanggil saat elemen di-klik
-        -   `userSelected` adalah nama event yang akan diterima parent
-        -   `user.id` adalah data yang dikirim ke parent melalui event
-        -   _Parent_ bisa menangkap event ini dengan `@userSelected="<method-name>"`
+Berikut adalah contoh penggunaan kode tersebut di _parent component_:
 
-    Berikut adalah contoh penggunaan kode tersebut di _parent component_:
-
-    ```ts
-    <template>
-    	<UserComponent
-    		:user="userData"
-    		@userSelected="handleUserSelection"
-    	/>
-    </template>
-    ```
-
--   _Lifecycle Hooks_
-
-    Nuxt menyediakan beberapa metode yang dipanggil pada tahap-tahap tertentu pada sebuah komponen, seperti:
-
-    -   `beforeCreate()`
-
-        -   Hook pertama yang dipanggil saat komponen diinisialisasi
-        -   Data dan events belum diatur
-        -   Belum bisa mengakses `this`
-
-    -   `create()`
-
-        -   Data sudah diobservasi dan events sudah diset
-        -   Cocok untuk fetch data awal
-        -   Template belum di-render
-
-    -   `beforeMount()`
-
-        -   Dipanggil sebelumn render pertama terjadi
-        -   Template sudah di-_compile_
-        -   Virtual DOM belum dibuat
-
-    -   `mounted()`
-
-        -   Komponen sudah di-render ke DOM
-        -   Bisa mengakses elemen DOM
-        -   Cocok untuk integrasi _third-party library_
-
-    -   `beforeUpdate()`
-
-        -   Dipanggil saat data berubah
-        -   Sebelum perubahan diaplikasikan ke DOM
-        -   Bisa digunakan untuk persiapan sebelum update
-
-    -   `updated()`
-
-        -   Setelah perubahan diaplikasikan ke DOM
-        -   DOM sudah ada pada _state_ terbaru
-        -   Hindari perubahan _state_ disini
-
-    -   `beforeDestroy()`
-
-        -   Sebelum komponen dihapus
-        -   Komponen masih _fully functional_
-        -   Cocok untuk _cleanup_ (_interval_, _subscription_)
-
-    -   `destroyed()`
-        -   Komponen sudah dihapus
-        -   Semua _directives_ sudah _unbound_
-        -   _Event listeners_ sudah di-_remove_
+```ts
+<template>
+	<UserComponent
+		:user="userData"
+		@userSelected="handleUserSelection"
+	/>
+</template>
+```
 
 ## _Data Fetching_
 
@@ -296,7 +243,7 @@ Nuxt menyediakan berbagai cara untuk melakukan _data fetching_ dengan mendukung 
 
 -   _Server-Side Rendering_
 
-    Data diambil di server sebelum halaman dikirim ke klien. Ini memungkinkan halaman di-_render_ dengan data lengkap saat pertama kali dimuat serta meningkatkan SEO. Untuk melakukan fetching di sisi server dapat menggunakan fungsi `useAsyncData` yang merupakan composable bawaan Nuxt untuk mengambil data dengan men-_support_ SSR. Berikut adalah contoh codenya:
+    Data diambil dari server sebelum halaman dikirimkan ke klien, sehingga memungkinkan halaman dapat di-_render_ dengan data lengkap saat pertama kali dimuat. Data fetching pada SSR dapat dilakukan menggunakan fungsi `useAsyncData`, yaitu composable bawaan Nuxt yang mendukung pengambilan data secara SSR. Berikut adalah contoh codenya:
 
     ```ts
     <script setup lang="ts">
@@ -318,7 +265,7 @@ Nuxt menyediakan berbagai cara untuk melakukan _data fetching_ dengan mendukung 
 
 -   _Static Site Generation (SSG)_
 
-    Data diambil selama _build time_ dan dimasukkan langsung ke file HTML statis, sehingga cocok untuk konten yang isinya jarang berubah, seperti blog atau dokumentasi. Untuk mengatur sebuah halaman agar menjadi statis, atur mode `static` pada `nuxt.config.ts`:
+    Data diambil selama _build time_ dan dimasukkan langsung ke file HTML statis, sehingga cocok untuk konten yang isinya jarang berubah. Untuk mengatur sebuah halaman agar menjadi statis, atur mode `static` pada `nuxt.config.ts`:
 
     ```ts
     export default defineNuxtConfig({
