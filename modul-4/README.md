@@ -77,10 +77,10 @@ Ini dibangun diatas HTML, CSS, Javascript standar dan menyediakan model pemrogra
 
 Berikut merupakan 2 fitur inti pada vue :
 
-- Perenderan Deklaratif
-  Vue memungkinkan Anda mendefinisikan tampilan (UI) Anda secara deklaratif menggunakan sintaks template yang mirip dengan HTML. Dengan pendekatan ini, Anda hanya perlu mendeskripsikan bagaimana tampilan harus terlihat berdasarkan status atau data yang diberikan, dan Vue akan mengurus renderingnya secara otomatis saat data berubah.
-- Reaktivitas
-  Vue secara otomatis memantau perubahan dalam data dan secara cerdas memperbarui tampilan hanya saat diperlukan. Jadi, kita tidak perlu memanipulasi DOM secara langsung.
+-   Perenderan Deklaratif
+    Vue memungkinkan Anda mendefinisikan tampilan (UI) Anda secara deklaratif menggunakan sintaks template yang mirip dengan HTML. Dengan pendekatan ini, Anda hanya perlu mendeskripsikan bagaimana tampilan harus terlihat berdasarkan status atau data yang diberikan, dan Vue akan mengurus renderingnya secara otomatis saat data berubah.
+-   Reaktivitas
+    Vue secara otomatis memantau perubahan dalam data dan secara cerdas memperbarui tampilan hanya saat diperlukan. Jadi, kita tidak perlu memanipulasi DOM secara langsung.
 
 ## Single File Component
 
@@ -410,8 +410,8 @@ Computed properties adalah properti yang dapat diikat ke template seperti proper
 
 Manfaat :
 
-- Computed properties di-cache, Vue hanya akaan mengeksekusi ulang _computed property_ ketika salah satu dependensinya berubah
-- Karena computed property adalah sebuah fungsi, kita dapat menambahkan fungsionalitas kompleks yang tidak dapat kita lakukan hanya dengan interpolasi string.
+-   Computed properties di-cache, Vue hanya akaan mengeksekusi ulang _computed property_ ketika salah satu dependensinya berubah
+-   Karena computed property adalah sebuah fungsi, kita dapat menambahkan fungsionalitas kompleks yang tidak dapat kita lakukan hanya dengan interpolasi string.
 
 ```html
 <template>
